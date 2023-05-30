@@ -1,0 +1,8 @@
+resources = docker_compose("./dev/setup-compose.yml")
+
+resources.pods["dev"].add_env_vars({"RAFTT_ENV_ID": get_env_id()})
+
+setup_container(resources)
+
+on_init("./dev/tf_apply.sh")
+on_termination("./dev/tf_destroy.sh")

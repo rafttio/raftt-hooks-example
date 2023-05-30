@@ -1,1 +1,7 @@
 envDefinition: env.raftt
+envLifecycleHooks: hooks.raftt
+host: <change-me>
+secrets:
+  aws-credentials:
+    inputcommand: cat ~/.aws/credentials
+    outputvolume: true
